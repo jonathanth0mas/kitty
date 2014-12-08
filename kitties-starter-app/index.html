@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html ng-app="catApp">
+	<head>
+		<meta charset="utf-8">
+
+		<title>An HTML Page</title>
+
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		
+		<script src="js/angular.js"></script>
+		<script src="js/app.js"></script>
+	</head>
+
+	<body ng-controller="KittiesController as kitties">
+		<div id="container">
+			<h1></h1>
+				<section class="left-container">
+					<h2>Kitties Waiting for Adoption</h2>
+					<p>{{this.catName}}</p>
+					<p>{{this.monthsOld}}</p>
+					<p>{{this.gender}}</p>
+
+					<img src="">
+					<p>Adopt?<input type="checkbox" ng-model=""></p>
+				</section>
+
+
+
+
+				<section class="right-container">
+					<h2>Kitties Adopted</h2>
+					<p>{{this.catName}}</p>
+					<p>{{this.monthsOld}}</p>
+					<p>{{this.gender}}</p>
+
+					<img src="">
+					<p>No Love?<input type="checkbox" ng-model=""></p>
+				</section>
+
+		</section>
+	</body>
+</html>
