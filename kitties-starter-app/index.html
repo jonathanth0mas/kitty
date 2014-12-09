@@ -14,35 +14,37 @@
 		<link rel="stylesheet" href="css/style.css">
 		
 		<script src="js/angular.js"></script>
-		<script src="js/app.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/KittiesController.js"></script>
 	</head>
 
-	<body ng-controller="KittiesController as kitties">
+	<body ng-controller="catController as kitties">
 		<div id="container">
 			<h1></h1>
-				<section class="left-container">
+			<div class="left-container">
+				<section class="dashed" ng-repeat="kitty in kitties.catList | filter:{adopted: false}">
 					<h2>Kitties Waiting for Adoption</h2>
-					<p>{{this.catName}}</p>
-					<p>{{this.monthsOld}}</p>
-					<p>{{this.gender}}</p>
+					<p>{{kitty.catName}}</p>
+					<p>{{kitty.monthsOld}}</p>
+					<p>{{kitty.gender}}</p>
 
-					<img src="">
-					<p>Adopt?<input type="checkbox" ng-model=""></p>
+					<img src="{{kitty.image}}"/>
+					<p>Adopt?<input type="checkbox" ng-model="kitty.adopted"></p>
 				</section>
+			</div>
 
 
-
-
-				<section class="right-container">
+			<div class="right-container">
+				<section class="dashed" ng-repeat="kitty in kitties.catList | filter:{adopted: true}">
 					<h2>Kitties Adopted</h2>
-					<p>{{this.catName}}</p>
-					<p>{{this.monthsOld}}</p>
-					<p>{{this.gender}}</p>
+					<p>{{kitty.catName}}</p>
+					<p>{{kitty.monthsOld}}</p>
+					<p>{{kitty.gender}}</p>
 
-					<img src="">
-					<p>No Love?<input type="checkbox" ng-model=""></p>
+					<img src="{{kitty.image}}"/>
+					<p>No Love?<input type="checkbox" ng-model="kitty.adopted"></p>
 				</section>
-
-		</section>
+			</div>
+		</div>
 	</body>
 </html>

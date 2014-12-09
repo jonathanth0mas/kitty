@@ -3,8 +3,8 @@ angular
 	.controller("catController", catControllerFunc);
 
 	function catControllerFunc(){
-		this.catList
-	}
+		this.catList = 
+	
 [
 		{
 			catName: 'Karl',
@@ -36,3 +36,4 @@ angular
 		}
 
 	];
+}
